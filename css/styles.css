@@ -1,0 +1,12 @@
+.circle {
+  width:150px;
+  height:150px;
+  margin:0 auto;
+  background-color:#ADEAEA;
+  color:black;
+  border-radius:10px;
+}
+
+h1 {
+  text-align:center;
+}
