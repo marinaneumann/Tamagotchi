@@ -12,5 +12,43 @@ var Tamagotchi = {
   },
   isAlive: function() {
     return this.foodLevel > 0 && this.sleepLevel > 0 && this.activityLevel > 0;
-  },
+  }
 }
+
+$(document).ready(function() {
+  var myTamagotchi = Object.create(Tamagotchi);
+  myTamagotchi.initialize("Buddy");
+  $(".circle1").text(myTamagotchi.foodLevel);
+  $(".circle2").text(myTamagotchi.sleepLevel);
+  $(".circle3").text(myTamagotchi.activityLevel);
+
+  $("#feed").click(function() {
+    myTamagotchi.foodLevel += 1;
+    $(".circle1").text(myTamagotchi.foodLevel);
+  });
+  $("#sleep").click(function() {
+    myTamagotchi.sleepLevel += 1;
+    $(".circle2").text(myTamagotchi.sleepLevel);
+  });
+  $("#stuff").click(function() {
+    myTamagotchi.activityLevel += 1;
+    $(".circle3").text(myTamagotchi.activityLevel);
+  });
+
+  var timer = window.setInterval(function() {
+              if (myTamagotchi.isAlive()) {
+              myTamagotchi.timePasses();
+              $(".circle1").text(myTamagotchi.foodLevel);
+              $(".circle2").text(myTamagotchi.sleepLevel);
+              $(".circle3").text(myTamagotchi.activityLevel);
+                if(myTamagotchi.isAlive()) {
+                  $(".happy").show();
+                } else {
+                  $(".happy").hide();
+                  $(".sad").show();
+                }
+              }
+                 }, 400)
+  timer;
+
+});

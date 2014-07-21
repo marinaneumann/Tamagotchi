@@ -1,12 +1,32 @@
-.circle {
+.circle1, .circle2, .circle3 {
   width:150px;
   height:150px;
   margin:0 auto;
   background-color:#ADEAEA;
   color:black;
   border-radius:10px;
+  font-size:90px;
 }
 
 h1 {
   text-align:center;
 }
+
+.col-md-4 {
+  text-align:center;
+  padding:5px;
+}
+
+#picture{
+  text-align:center;
+  padding:20px;
+}
+
+.happy, .sad {
+  display:none;
+}
+
+#results, .sad {
+  text-align:center;
+}
+

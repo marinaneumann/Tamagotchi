@@ -27,6 +27,7 @@ describe("Tamagotchi", function() {
       myTamagotchi.initialize("Buddy");
       myTamagotchi.isAlive().should.equal(true);
     });
+
     it("is dead if any of the supply levels are at 0", function() {
       var myTamagotchi= Object.create(Tamagotchi);
       myTamagotchi.initialize("Buddy");
